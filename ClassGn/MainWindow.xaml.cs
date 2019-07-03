@@ -75,13 +75,15 @@ namespace ClassGn
         {
             Grid grid = new Grid();
             Rectangle rectangle = new Rectangle();
-            rectangle.Fill = new SolidColorBrush(Get_NextColor());
+            Color next = Get_NextColor();
+            next.A = 128;
+            rectangle.Fill = new SolidColorBrush(next);
             rectangle.RadiusX = 2;
             rectangle.RadiusY = 2;
             grid.Children.Add(rectangle);
             TextBlock tbxDect = new TextBlock();
             tbxDect.VerticalAlignment = VerticalAlignment.Top;
-            tbxDect.Padding = new Thickness(5);
+            tbxDect.Padding = new Thickness(5,2,5,2);
             tbxDect.Text = exam.Dest;
             tbxDect.FontSize = 14;
             tbxDect.TextWrapping = TextWrapping.Wrap;
@@ -93,7 +95,7 @@ namespace ClassGn
             tbxDetail.Padding = new Thickness(3);
             tbxDetail.VerticalAlignment = VerticalAlignment.Center;
             tbxDetail.TextAlignment = TextAlignment.Center;
-            tbxDetail.FontSize = 12;
+            tbxDetail.FontSize = 10;
             tbxDetail.TextWrapping = TextWrapping.Wrap;
             tbxDetail.Foreground = Brushes.White;
             tbxDetail.Text = exam.Title + ":" + exam.Teacher;
@@ -159,6 +161,20 @@ namespace ClassGn
             }
             catch (Exception)
             {
+            }
+        }
+
+        private void ButtonSetBg_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog()
+            {
+                Filter = "图片 (*.bmp,*.jpg,*.jpeg,*.png)|*.bmp;*.jpg;*.jpeg;*.png"
+            };
+            var result = openFileDialog.ShowDialog();
+            if (result == true)
+            {
+                Uri uri = new Uri(openFileDialog.FileName);
+                ImgBg.Source = new BitmapImage(uri);
             }
         }
     }

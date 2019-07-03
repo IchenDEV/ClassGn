@@ -12,6 +12,7 @@
             <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
         <Canvas x:Name="CanvasGn">
+            <Image x:Name="ImgBg" Margin="10,10,0,0" Width="400" Height="600" Stretch="UniformToFill"/>
             <Line X1="10" Y1="28" X2="410" Y2="28" Stroke="LightGray"/>
             <Grid Margin="30,10,0,0" Width="380" Height="20">
                 <Grid.ColumnDefinitions>
@@ -29,13 +30,13 @@
                     <ColumnDefinition Width="5"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="周一" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Column="2" Text="周二" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Column="4" Text="周三" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Column="6" Text="周四" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Column="8" Text="周五" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Column="10" Text="周六" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Column="12" Text="周日" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
+                <TextBlock Text="周一" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Column="2" Text="周二" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Column="4" Text="周三" Style="{StaticResource TbxDisplay}"/>
+                <TextBlock Grid.Column="6" Text="周四" Style="{StaticResource TbxDisplay}"/>
+                <TextBlock Grid.Column="8" Text="周五" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Column="10" Text="周六" Style="{StaticResource TbxDisplay}"/>
+                <TextBlock Grid.Column="12" Text="周日" Style="{StaticResource TbxDisplay}"/>
             </Grid>
             <Line X1="28" Y1="10" X2="28" Y2="610" Stroke="LightGray"/>
             <Grid Margin="10,30,0,0" Width="20" Height="580">
@@ -66,19 +67,19 @@
                     <RowDefinition Height="5"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="2" Text="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="4" Text="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="6" Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="8" Text="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="10" Text="6" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="12" Text="7" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="14" Text="8" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="16" Text="9" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="18" Text="10" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="20" Text="11" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="22" Text="12" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
-                <TextBlock Grid.Row="24" Text="13" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" Foreground="Gray" FontWeight="Bold" />
+                <TextBlock Text="1" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="2" Text="2" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="4" Text="3" Style="{StaticResource TbxDisplay}"/>
+                <TextBlock Grid.Row="6" Text="4" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="8" Text="5" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="10" Text="6" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="12" Text="7" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="14" Text="8" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="16" Text="9" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="18" Text="10" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="20" Text="11" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="22" Text="12" Style="{StaticResource TbxDisplay}" />
+                <TextBlock Grid.Row="24" Text="13" Style="{StaticResource TbxDisplay}" />
             </Grid>
             <Grid x:Name="GridTable" Width="380" Height="580" Margin="30,30,0,0">
                 <Grid.ColumnDefinitions>
@@ -136,6 +137,10 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <TextBox x:Name="TbkInput" AcceptsReturn="True" AcceptsTab="True" Text="1 1-2 广210 离散数学 王" Foreground="DarkOliveGreen" FontFamily="Consolas"  TextChanged="TbkInput_TextChanged"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <Button Content="设置背景" Padding="10" Click="ButtonSetBg_Click"/>
+                <Button Content="清除背景" Padding="10"/>
+            </StackPanel>       
         </Grid>
     </Grid>
 </Window>
