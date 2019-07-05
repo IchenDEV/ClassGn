@@ -1,0 +1,112 @@
+﻿<UserControl
+    x:Class="ClassGen.ClassViewControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClassGen"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Windows10version1903="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 8)"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400" >
+
+    <Grid Background="White" x:Name="Table">
+        <Grid.Resources>
+            <Windows10version1903:ThemeShadow x:Name="SharedShadow" />
+            <Windows10version1903:ThemeShadow x:Key="BoxShadow" x:Name="BoxShadow" />
+        </Grid.Resources>
+        
+        <Grid x:Name="BackgroundGrid" Background="{ThemeResource SystemControlAcrylicWindowBrush}" />
+        
+        <!--<Image x:Name="ImgBg" Stretch="UniformToFill"/>-->
+        <Grid Height="32" VerticalAlignment="Top" HorizontalAlignment="Stretch"  Margin="32,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="128"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="周一" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Column="1" Text="周二" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Column="2" Text="周三" Style="{StaticResource TbxDisplay}"/>
+            <TextBlock Grid.Column="3" Text="周四" Style="{StaticResource TbxDisplay}"/>
+            <TextBlock Grid.Column="4" Text="周五" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Column="5" Text="周六" Style="{StaticResource TbxDisplay}"/>
+            <TextBlock Grid.Column="6" Text="周日" Style="{StaticResource TbxDisplay}"/>
+        </Grid>
+        <Grid  Width="32"  HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="0,32,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="1" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="1" Text="2" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="2" Text="3" Style="{StaticResource TbxDisplay}"/>
+            <TextBlock Grid.Row="3" Text="4" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="4" Text="5" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="5" Text="6" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="6" Text="7" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="7" Text="8" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="8" Text="9" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="9" Text="10" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="10" Text="11" Style="{StaticResource TbxDisplay}" />
+            <TextBlock Grid.Row="11" Text="12" Style="{StaticResource TbxDisplay}" />
+        </Grid>
+        <Grid x:Name="BackgroundTable" Background="{StaticResource BackgroundBrush}" Margin="32,32,0,0" CornerRadius="2,0,0,0"/>
+        <Grid x:Name="GridTable"  Windows10version1903:Shadow="{StaticResource SharedShadow}"  Margin="32,32,0,0" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="128"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Grid x:Name="ErrGrid"   Margin="32,32,0,0">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="错误" HorizontalAlignment="Center" FontWeight="Bold" FontSize="24" />
+                <TextBlock x:Name="ErrMsg" Text="Ex" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="tryAgain" HorizontalAlignment="Center" Content="重试" Click="TryAgain_Click" Margin="10" />
+                    <Button x:Name="offline" HorizontalAlignment="Center" Content="加载离线课表" Click="Offline_Click" Margin="10"/>
+                    <Button x:Name="setting" HorizontalAlignment="Center" Content="设置" Click="set_Click" Margin="10"/>
+                </StackPanel>
+               
+            </StackPanel>
+            
+        </Grid>
+        <ProgressRing x:Name="pr" Width="100" Height="100" />
+    </Grid>
+</UserControl>

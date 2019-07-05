@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="ClassGen.SettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClassGen"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:Windows10version1903="http://schemas.microsoft.com/winfx/2006/xaml/presentation?IsApiContractPresent(Windows.Foundation.UniversalApiContract, 8)"
+   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Resources>
+            <Windows10version1903:ThemeShadow x:Name="SharedShadow" />
+        </Grid.Resources>
+        <Grid x:Name="BackgroundGrid" Background="{ThemeResource SystemControlAcrylicWindowBrush}" />
+        <NavigationView x:Name="nvSample"   BackRequested="NvSample_BackRequested" PaneTitle="设置" IsSettingsVisible="False" IsBackEnabled="True" AlwaysShowHeader="False" Margin="0,-1,0,0" ItemInvoked="NvSample_ItemInvoked" >
+            <NavigationView.MenuItems >
+                <NavigationViewItem x:Name="User" Icon="OtherUser" Content="用户" Tag="UserSettingPage" />
+                <!--<NavigationViewItem Icon="Pictures" Content="背景" Tag="BackgroundSettingPage" />-->
+                <NavigationViewItem Icon="Bullets" Content="关于" Tag="AboutPage" />
+            </NavigationView.MenuItems>
+            <Frame x:Name="contentFrame" Windows10version1903:Shadow="{StaticResource SharedShadow}" Background="White"/>
+        </NavigationView>
+        <Grid x:Name="TitleBar" Background="Transparent" Height="32" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="64,0,0,0" />
+    </Grid>
+</Page>

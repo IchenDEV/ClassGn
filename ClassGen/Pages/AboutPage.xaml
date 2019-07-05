@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="ClassGen.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClassGen.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <ScrollViewer>
+        <StackPanel Margin="40" >
+            <TextBlock Text="关于" FontSize="20" FontWeight="Bold" />
+            <StackPanel Margin="0,20,20,20" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Assets/Square44x44Logo.png" />
+                    <TextBlock Text="{x:Bind ApplicationName}" FontWeight="SemiBold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Margin="0,20,20,20" >
+                <StackPanel Orientation="Horizontal">
+                    <Grid>
+                        <SymbolIcon x:Name="UpdateSymbol" Symbol="Accept" Margin="0,0,20,0"/>
+                        <ProgressRing x:Name="UpdateRing"/>
+                    </Grid>
+                    
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock Text="{x:Bind ApplicationName}" FontWeight="Bold" FontSize="16"  />
+                            <TextBlock x:Name="UpdateStatusTextBlock" FontWeight="Bold" FontSize="16"  />
+                        </StackPanel>
+
+                        <RichTextBlock SelectionHighlightColor="Green" FontWeight="Light" FontSize="14" >
+                            <Paragraph FontFamily="Segoe UI">版本
+                                <Run Text="{x:Bind ApplicationVersion}"></Run> (官方内部版本) canary(
+                                <Run Text="{x:Bind OperatingSystemArchitecture}"></Run> )
+                            </Paragraph>
+                        </RichTextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <RichTextBlock SelectionHighlightColor="Green">
+                <Paragraph FontFamily="Segoe UI">此课程表基于
+                    <Hyperlink NavigateUri="https://github.com/h1542462994/ClassGn">ClassGn</Hyperlink> 开源项目及其他
+                    <Run FontFamily="Segoe UI">开源软件</Run> 。
+                </Paragraph>
+
+            </RichTextBlock>
+
+            <TextBlock Text="{x:Bind ApplicationVersion}" FontWeight="Light" FontSize="14" FontFamily="Segoe UI" />
+            <TextBlock Text="@ 2019 zjut jh。 保留所有权利。" FontWeight="Light" FontSize="14" />
+            <RichTextBlock SelectionHighlightColor="Green" Margin="0,30,0,0">
+                <Paragraph FontFamily="Segoe UI">
+                    <Run  FontWeight="Bold" FontSize="16" >Credits</Run>
+                    <LineBreak/>
+                    <Hyperlink NavigateUri="https://github.com/h1542462994/ClassGn">ClassGn</Hyperlink>
+                    <LineBreak/>
+                    <Hyperlink NavigateUri="https://github.com/zjutjh/document/blob/master/5-API/5.5-%E6%AD%A3%E6%96%B9%E8%AF%BE%E8%A1%A8.md">正方课表API</Hyperlink>
+                    <LineBreak/>
+                    <Hyperlink NavigateUri="https://github.com/SavchukSergey/caesium">Caesium</Hyperlink>
+                    <LineBreak/>
+                </Paragraph>
+
+            </RichTextBlock>
+        </StackPanel>
+    </ScrollViewer>
+    
+</Page>

@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="ClassGen.Pages.UserSettingPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClassGen.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer>
+        <StackPanel Margin="40" >
+            <TextBlock Text="用户" FontSize="20" FontWeight="Bold" />
+            <Grid Margin="20,20,20,10">
+                <TextBlock Text="用户名" FontSize="16" FontWeight="Bold" />
+                <TextBox x:Name="username" HorizontalAlignment="Right" MinWidth="200" PlaceholderText="201800000000" TextChanged="TextBox_TextChanged"/>
+            </Grid>
+            <Grid Margin="20,11,20,20">
+                <TextBlock Text="密码" FontSize="16" FontWeight="Bold" />
+                <TextBox x:Name="password" HorizontalAlignment="Right" MinWidth="200" PlaceholderText="201800000000" TextChanged="Password_TextChanged" />
+            </Grid>
+            <Grid Margin="20,11,20,20">
+                <TextBlock Text="学年" FontSize="16" FontWeight="Bold" />
+                <TextBox x:Name="year" HorizontalAlignment="Right" MinWidth="200" PlaceholderText="2018" TextChanged="year_TextChanged" />
+            </Grid>
+            <Grid Margin="20,11,20,20">
+                <TextBlock Text="学期" FontSize="16" FontWeight="Bold" />
+                <ComboBox HorizontalAlignment="Right" MinWidth="200" SelectionChanged="ComboBox_SelectionChanged" x:Name="ter">
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>短</ComboBoxItem>
+                </ComboBox>
+              
+            </Grid>
+
+
+        </StackPanel>
+    </ScrollViewer>
+</Page>

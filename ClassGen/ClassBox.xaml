@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="ClassGen.ClassBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClassGen"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="200"
+    d:DesignWidth="100" 
+  
+    
+    Tapped="UserControl_Tapped" RenderTransformOrigin="0.5,0.5"
+    >
+
+    <FlyoutBase.AttachedFlyout>
+        <Flyout>
+            <StackPanel>
+                <TextBlock   Text="{x:Bind ThisClass.cdmc}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
+                <TextBlock   Text="{x:Bind ThisClass.xm}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"/>
+                <TextBlock   Text="{x:Bind ThisClass.kcmc}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
+                <TextBlock   Text="{x:Bind ThisClass.classinfo}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
+                <TextBlock   Text="{x:Bind ThisClass.classtype}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
+                <TextBlock   Text="{x:Bind ThisClass.classhuor}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
+            </StackPanel>
+        </Flyout>
+    </FlyoutBase.AttachedFlyout>
+    <Grid Background="{ThemeResource SystemControlAcrylicElementMediumHighBrush}" 
+          CornerRadius="2"  
+          PointerEntered="element_PointerEntered"
+          PointerExited="element_PointerExited">
+        <Grid  Background="{x:Bind BackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="Classroom" TextWrapping="WrapWholeWords" Grid.Row="0" Text="{x:Bind ThisClass.cdmc}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+            <TextBlock x:Name="Teacher" TextWrapping="WrapWholeWords" Grid.Row="1" Text="{x:Bind ThisClass.xm}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"/>
+            <TextBlock x:Name="ClassName" TextWrapping="WrapWholeWords" Grid.Row="2" Text="{x:Bind ThisClass.kcmc}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+
+</UserControl>
