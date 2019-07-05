@@ -2,14 +2,14 @@
 ## Screenshots
 #### UWP
 
-![ClassGenUWP](https://raw.githubusercontent.com/IchenDEV/ClassGn/master/ScreenShots/1.png)
+![ClassGenUWP](https://raw.githubusercontent.com/IchenDEV/ClassGn/master/ScreenShot/1.png)
 
-![ClassGenUWP](https://raw.githubusercontent.com/IchenDEV/ClassGn/master/ScreenShots/2.png)
+![ClassGenUWP](https://raw.githubusercontent.com/IchenDEV/ClassGn/master/ScreenShot/2.png)
 
-![ClassGenUWP](https://raw.githubusercontent.com/IchenDEV/ClassGn/master/ScreenShots/3.png)
+![ClassGenUWP](https://raw.githubusercontent.com/IchenDEV/ClassGn/master/ScreenShot/3.png)
 #### Desktop
 
-![ClassGen](https://raw.githubusercontent.com/IchenDEV/ClassGn/master/ScreenShots/4.png)
+![ClassGen](https://raw.githubusercontent.com/IchenDEV/ClassGn/master/ScreenShot/4.png)
 
 #### Building from source
 
